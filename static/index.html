@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Among Us Game</title>
+</head>
+<body>
+    <div id="players"></div>
+
+    <script>
+        fetch('http://localhost:8000/players/')
+            .then(response => response.json())
+            .then(data => {
+                const playersDiv = document.getElementById('players');
+                data.players.forEach(player => {
+                    const playerDiv = document.createElement('div');
+                    playerDiv.textContent = `Username: ${player.username}, Avatar: ${player.avatar}`;
+                    playersDiv.appendChild(playerDiv);
+                });
+            })
+            .catch(error => console.error('Error fetching players:', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#players-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#players-list {
+    list-style: none;
+    padding: 0;
+}
+
+.player-item {
+    margin-bottom: 10px;
+}
+
+.player-item span {
+    font-weight: bold;
+}
